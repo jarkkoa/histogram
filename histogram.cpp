@@ -25,6 +25,12 @@ Hist::EInteger Histogram::getMode() const
 
 Hist::EInteger Histogram::getMinValue() const
 {
+    auto mode = std::min_element(histogramData_.begin(), histogramData_.end());
+    return mode->first;
+}
+
+Hist::EInteger Histogram::getMaxValue() const
+{
     auto mode = std::max_element(histogramData_.begin(), histogramData_.end());
     return mode->first;
 }
