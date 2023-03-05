@@ -2,6 +2,12 @@
 #include <algorithm>
 #include <stdexcept>
 
+
+Histogram::~Histogram()
+{
+
+}
+
 void Histogram::add(Hist::EInteger newInt)
 {
     if (histogramData_.find(newInt) == histogramData_.end())

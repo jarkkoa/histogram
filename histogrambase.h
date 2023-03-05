@@ -52,13 +52,13 @@ namespace Hist
 
     HistogramBase() = delete;
 
-    HistogramBase(std::unique_ptr<Logger>);
+    HistogramBase(std::unique_ptr<Logger>) {};
 
-    HistogramBase(const HistogramBase&);
+    HistogramBase(const HistogramBase&) {};
 
-    HistogramBase(HistogramBase&&);
+    HistogramBase(HistogramBase&&) {};
 
-    virtual ~HistogramBase();
+    virtual ~HistogramBase() {};
 
 
     virtual void add(EInteger) = 0;

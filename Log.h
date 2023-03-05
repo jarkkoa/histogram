@@ -3,7 +3,8 @@
 
 class Logger
 {
-    Logger() = default;
+    public:
+        Logger() = default;
 };
 
 #endif

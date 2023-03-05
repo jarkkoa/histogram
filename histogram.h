@@ -5,12 +5,14 @@
 #include "histogrambase.h"
 #include <unordered_map>
 
+
 class Histogram : public Hist::HistogramBase
 {
-    Histogram();
-    ~Histogram();
-
     public:
+
+        using HistogramBase::HistogramBase;
+
+        virtual ~Histogram();
 
         /**
          * @brief Add an EInteger into the histogram
