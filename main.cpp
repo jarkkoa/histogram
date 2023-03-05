@@ -5,22 +5,33 @@
 #include "randomeintegergenerator.h"
 #include "Log.h"
 
-using namespace std;
-
 int main()
 {
 
     RandomEintegerGenerator gen;
-    Hist::HistogramBase *hg = new Histogram(std::make_unique<Logger>());
+    std::unique_ptr<Hist::HistogramBase> hg(new Histogram(std::make_unique<Logger>()));
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 100; i++)
     {
         Hist::EInteger random = gen();
-        hg->add(random);
+        hg.get()->add(random);
         std::cout << random << std::endl;
     }
 
-    delete hg;
+    try {
+
+        int max = hg->getMaxValue();
+        int min = hg->getMinValue();
+        int mode = hg->getMode();
+
+        std::cout << "Max: " << max << std::endl;
+        std::cout << "Min: " << min << std::endl;
+        std::cout << "Mode: " << mode << std::endl;
+    }
+    catch (std::logic_error err)
+    {
+        std::cout << err.what() << std::endl;
+    }
 
     return EXIT_SUCCESS;
 }
