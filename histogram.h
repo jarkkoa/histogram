@@ -41,7 +41,7 @@ class Histogram : public Hist::HistogramBase
     private:
 
         // Usimg map to easily keep track of EInt counts
-        std::unordered_map<Hist::EInteger, int> histogramData_;
+        std::unordered_map<Hist::EInteger, int, std::hash<int>> histogramData_;
 };
 
 
