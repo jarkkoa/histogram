@@ -1,5 +1,6 @@
 #include "histogram.h"
 #include <algorithm>
+#include <stdexcept>
 
 void Histogram::add(Hist::EInteger newInt)
 {
@@ -15,6 +16,11 @@ void Histogram::add(Hist::EInteger newInt)
 
 Hist::EInteger Histogram::getMode() const
 {
+    if (histogramData_.empty())
+    {
+        throw std::logic_error("Histogram is empty, mode is undefined");
+    }
+
     auto mode = std::max_element(
         histogramData_.begin(), histogramData_.end(),
         [](const auto &a, const auto &b)
@@ -25,12 +31,22 @@ Hist::EInteger Histogram::getMode() const
 
 Hist::EInteger Histogram::getMinValue() const
 {
+    if (histogramData_.empty())
+    {
+        throw std::logic_error("Histogram is empty, min value doesn't exist");
+    }
+
     auto mode = std::min_element(histogramData_.begin(), histogramData_.end());
     return mode->first;
 }
 
 Hist::EInteger Histogram::getMaxValue() const
 {
+    if (histogramData_.empty())
+    {
+        throw std::logic_error("Histogram is empty, max value doesn't exist");
+    }
+
     auto mode = std::max_element(histogramData_.begin(), histogramData_.end());
     return mode->first;
 }

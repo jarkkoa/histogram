@@ -15,7 +15,7 @@ class Histogram : public Hist::HistogramBase
         void add(Hist::EInteger) override;
 
         /**
-         * @brief Get the Mode object
+         * @brief Get the mode of the histogram
          * 
          * @return Hist::EInteger 
          */
@@ -23,7 +23,7 @@ class Histogram : public Hist::HistogramBase
 
 
         /**
-         * @brief Get the Min Value object
+         * @brief Get the min value of the histogram
          * 
          * @return Hist::EInteger 
          */
@@ -31,7 +31,7 @@ class Histogram : public Hist::HistogramBase
 
 
         /**
-         * @brief Get the Max Value object
+         * @brief Get the max value of the histogram
          * 
          * @return Hist::EInteger 
          */
