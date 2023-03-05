@@ -1,0 +1,4 @@
+class Logger
+{
+    Logger() = default;
+};
