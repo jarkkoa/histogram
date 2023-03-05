@@ -6,9 +6,10 @@
 
 class RandomEintegerGenerator : public Hist::RandomEintegerGeneratorBase
 {
-    public:
 
-        Hist::EInteger operator()() override;
+public:
+    Hist::EInteger operator()() override;
+
 };
 
 #endif
