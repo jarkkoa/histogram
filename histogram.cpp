@@ -13,3 +13,13 @@ void Histogram::add(Hist::EInteger newInt)
     }
 }
 
+Hist::EInteger Histogram::getMode() const
+{
+    auto mode = std::max_element
+    (
+        histogramData_.begin(), histogramData_.end(),
+        [] (const auto &a, const auto &b) {return a.second < b.second;}
+    );
+
+    return mode->first;
+}
